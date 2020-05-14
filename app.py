@@ -1,10 +1,25 @@
+import os
+import json
+import datetime
 from flask import Flask, render_template, jsonify, Response, make_response
 from flask_api import status
 from flask_cors import CORS
+from pymongo import MongoClient
+import pprint
+from bson.json_util import loads, dumps
 
+
+# create a MongoClient to the running mongod instance on the default host and port
+client = MongoClient()
+
+# test data
 d = {"02": {"title": "I'd had quite a lot to drink and broke into song"}, 
     "01": {"title": "I put on perfume for a video call"}, 
     "03": {"title": "He seems like he’d give good hugs"}}
+
+# connect to mongoDB
+db = client.homemade_bread
+collect = db.bread
 
 # This current file __name__ represents my web application.
 # We are creating an instance of the Flask class and calling it app
@@ -33,12 +48,19 @@ def data():
 
 @app.route('/data/<id>')
 def data_id(id):
-    if id in d.keys():
-        d_new = {"id": id, "title" : d[id]["title"]}
-        return jsonify(d_new), status.HTTP_200_OK
+
+    # test data
+    # if id in d.keys():
+    #     d_new = {"id": id, "title" : d[id]["title"]}
+    #     return jsonify(d_new), status.HTTP_200_OK
+
+    item = collect.find_one({"id": float(id)})
+    print(item)
+    if item is not None:
+        # wraps json methods and provides explicit BSON conversion to JSON
+        return dumps(item), status.HTTP_200_OK
     else:
         return "Record not found", status.HTTP_404_NOT_FOUND
-
 
 if __name__ == "__main__":
     app.run(debug=True)
