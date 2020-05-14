@@ -16,7 +16,7 @@ fetch(d)
         // contentContainer.appendChild
         for (let item of data) {
             const header = document.createElement("h3");
-            header.innerText = item.title;
+            header.innerText = item.name;
             contentContainer.appendChild(header); 
         }
       });
