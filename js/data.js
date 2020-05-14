@@ -13,11 +13,15 @@ fetch(d)
       response.json().then(function(data) {
         console.log(data);
         const contentContainer = document.getElementById("content");
+        const contentContainer2 = document.getElementById("content");
         // contentContainer.appendChild
         for (let item of data) {
             const header = document.createElement("h3");
             header.innerText = item.name;
-            contentContainer.appendChild(header); 
+            contentContainer.appendChild(header);
+            const header2 = document.createElement("p");
+            header2.innerText = item.date; 
+            contentContainer2.appendChild(header2);
         }
       });
     }
