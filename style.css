@@ -23,3 +23,16 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
 }
+
+/* Fade - in of images */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0.3;
+    /* forwards: el retains values set by last key frame */
+    animation: fadeIn 0.2s ease-in 1 forwards;
+}
