@@ -1,0 +1,25 @@
+body {
+    margin: 20px;
+    padding: 0;
+    background: rgb(68, 60, 60);
+}
+
+.container {
+    max-width: 760px;
+    margin: auto;
+    border: #fff solid 3px;
+    background: rgb(231, 210, 210);
+}
+
+.main-img img,
+.imgs img {
+    /* width of main img is 100% of its container */
+    width: 100%; 
+}
+
+.imgs {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
