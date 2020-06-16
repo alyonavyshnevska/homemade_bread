@@ -1,5 +1,7 @@
 A small tool that shows a few of my favourite bread recipes.
 
+No frameworks, just simple vanilla JS for this very lightweight script.
+
 The grid can be seen here [here](https://alyonavyshnevska.github.io/assets/projects/homemade_bread/). 
 
 The recipe links are in the exported mongoDB collections: `bread.json` and `bread.csv`. 
