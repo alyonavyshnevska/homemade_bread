@@ -30,6 +30,33 @@ function imgClick(e) {
     // change opacity var
     e.target.style.opacity = opacity;
 
+    const imgId = e.target.src.slice(-6, -5);
+
+    const d='http://127.0.0.1:5000/data/'.concat(imgId);
+
+fetch(d)
+.then(
+    function(response) {
+
+      // communicate error to user
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json() // Define response type (JSON, Headers, Status codes)
+        .then(function(data) {  // get the response type 
+
+          document.getElementById('content').innerHTML = data.name.concat(' : ').concat(data.link);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+
 }
 
 //Destructuring way in js

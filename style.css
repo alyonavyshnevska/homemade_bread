@@ -36,3 +36,13 @@ body {
     /* forwards: el retains values set by last key frame */
     animation: fadeIn 0.2s ease-in 1 forwards;
 }
+
+
+#content {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: beige;
+  }

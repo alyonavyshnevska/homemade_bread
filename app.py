@@ -11,7 +11,7 @@ import pprint
 
 
 # create a MongoClient to the running mongod instance on the default host and port
-client = MongoClient()
+client = MongoClient() 
 
 # connect to mongoDB
 db = client.homemade_bread
@@ -47,7 +47,7 @@ def data():
 @app.route('/data/<id>')
 def data_id(id):
 
-    item = collect.find_one({"_id": int(id)})
+    item = jsonify(collect.find_one({"_id": int(id)}))
     print(item)
     if item is not None:
         # wraps json methods and provides explicit BSON conversion to JSON
