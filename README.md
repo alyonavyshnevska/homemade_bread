@@ -22,6 +22,7 @@ or
 mongoimport --db homemade_bread --collection bread --type csv --fields _id, name, link --file bread.csv
 ```
 
+- Install python requirements: `pip3 install -r requirements.txt` 
 
 - Run `python3 app.py` 
 
