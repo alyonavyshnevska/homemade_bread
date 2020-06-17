@@ -10,7 +10,7 @@ Usage:
 
 - Run mongoDB: [guide here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#run-mongodb-community-edition)
 
-- Import json or csv file into running mongoDB. Doesn'r really matter if you import a json file or a csv file. Whatever you prefer 
+- Import json or csv file into running mongoDB:
 
 ```
 mongoimport --db homemade_bread --collection bread --file bread.json
@@ -23,9 +23,9 @@ mongoimport --db homemade_bread --collection bread --type csv --fields _id, name
 ```
 
 
-- Run `python3 app.py`
+- Run `python3 app.py` 
 
-- Open `home.html` and click on image to get a link to its recipe
+- Open `home.html` and click on images to get links to their recipes
 
 
 The interation with grid csv can be seen here, without the connection to the database: [Link](https://alyonavyshnevska.github.io/assets/projects/homemade_bread/). 
